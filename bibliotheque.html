@@ -4,16 +4,95 @@
   <meta charset="UTF-8">
   <title>Ma bibliothèque</title>
   <style>
-    body { font-family: Arial, sans-serif; background:#fafafa; color:#222; padding:2rem; }
-    h1 { color:#007acc; text-align:center; }
-    a.button { display:inline-block; margin-top:2rem; background:#007acc; color:#fff; padding:0.7rem 1.5rem; border-radius:8px; text-decoration:none; }
-    a.button:hover { background:#005f99; }
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: url('images/bibliotheque.jpg') center/cover no-repeat fixed;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+
+    .overlay {
+      background-color: rgba(255,255,255,0.9);
+      min-height: 100vh;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #007acc;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .book {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .book:hover {
+      transform: translateY(-5px);
+    }
+
+    .book img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .book h3 {
+      padding: 1rem;
+      font-size: 1rem;
+      color: #007acc;
+    }
+
+    .button {
+      display: inline-block;
+      background: #007acc;
+      color: white;
+      text-decoration: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      margin: 2rem auto;
+      display: block;
+      width: fit-content;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: #005f99;
+    }
   </style>
 </head>
 <body>
-  <h1>Ma bibliothèque</h1>
-  <p style="text-align:center;">Cette page présentera tous les livres que j’ai lus cette année 📚</p>
-  <div style="text-align:center;">
+  <div class="overlay">
+    <h1>Ma bibliothèque</h1>
+    <div class="grid">
+      <a href="livres/livre1.html" class="book">
+        <img src="images/livre1.jpg" alt="Livre 1">
+        <h3>Pieds nus dans l'aube</h3>
+      </a>
+      <a href="livres/livre2.html" class="book">
+        <img src="images/livre2.jpg" alt="Livre 2">
+        <h3>L'Étranger</h3>
+      </a>
+      <a href="livres/livre3.html" class="book">
+        <img src="images/livre3.jpg" alt="Livre 3">
+        <h3>L'attentat</h3>
+      </a>
+    </div>
+
     <a href="index.html" class="button">← Retour au site</a>
   </div>
 </body>
