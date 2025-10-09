@@ -26,26 +26,36 @@
 
     .library {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 20px;
       justify-items: center;
     }
 
     .book {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 140px;
-  min-height: 270px; /* force la hauteur */
-  width: 140px; /* fixe la largeur des livres */
-  box-sizing: border-box;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center; /* centre le texte */
+      background-color: white; /* fond blanc pour contraste */
+      border: 1px solid #ddd; /* fine bordure */
+      border-radius: 10px; /* coins arrondis */
+      padding: 10px;
+      width: 150px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* légère ombre */
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .book:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
 
     .book img {
       width: 120px;
       height: 180px;
       object-fit: cover;
       margin-bottom: 10px;
-      cursor: default; /* pas cliquable */
+      border-radius: 5px;
     }
 
     .title {
@@ -58,30 +68,34 @@
     .author {
       font-size: 12px;
       color: #555;
+      margin-bottom: 5px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin: 0 auto 30px auto;
+      padding: 8px 16px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    a.button:hover {
+      background-color: #555;
     }
 
     /* Responsive */
-    @media (max-width: 1200px) {
-      .library {
-        grid-template-columns: repeat(4, 1fr); /* 4 livres par ligne */
-      }
-    }
-
-    @media (max-width: 900px) {
-      .library {
-        grid-template-columns: repeat(3, 1fr); /* 3 livres par ligne */
-      }
-    }
-
     @media (max-width: 600px) {
       .library {
-        grid-template-columns: repeat(2, 1fr); /* 2 livres par ligne */
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 400px) {
       .library {
-        grid-template-columns: 1fr; /* 1 livre par ligne */
+        grid-template-columns: 1fr;
       }
     }
   </style>
