@@ -1,211 +1,81 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Flavie Lachance</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      /* --- Reset minimaliste --- */
-      * { margin:0; padding:0; box-sizing:border-box; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; }
-      body { background:#fafafa; color:#222; line-height:1.6; }
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon CV - Étudiante</title>
+  <style>
+    /* --- Reset minimaliste --- */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    body { background:#fafafa; color:#222; line-height:1.6; }
+    a { color:#007acc; text-decoration:none; transition: color 0.3s; }
+    a:hover { color:#005f99; }
 
-      a { color:#ff6f61; text-decoration:none; transition: color 0.3s; }
-      a:hover { color:#e65b50; }
+    /* --- Header --- */
+    header { text-align:center; padding:4rem 1rem 2rem 1rem; background:#fff; border-bottom:1px solid #eee; }
+    header img { width:130px; height:130px; border-radius:50%; border:2px solid #007acc; }
+    header h1 { margin-top:1rem; font-weight:400; font-size:2rem; }
+    header p { margin-top:0.5rem; color:#555; font-size:1rem; }
 
-      /* --- Header --- */
-      #header {
-        text-align:center;
-        padding:4rem 1rem 2rem 1rem;
-        background:#fff;
-        border-bottom:1px solid #eee;
-      }
+    /* --- Navigation --- */
+    nav ul { display:flex; justify-content:center; list-style:none; margin-top:2rem; gap:2rem; }
+    nav a.active { border-bottom:2px solid #007acc; padding-bottom:2px; }
 
-      #header .avatar img {
-        width:130px;
-        height:130px;
-        border-radius:50%;
-        border:2px solid #ff6f61;
-      }
+    /* --- Sections --- */
+    section { padding:5rem 1rem; max-width:900px; margin:0 auto; }
+    section h2, section h3 { color:#007acc; font-weight:400; margin-bottom:1rem; }
+    section p { color:#333; margin-bottom:1.5rem; }
 
-      #header h1 { margin-top:1rem; font-weight:400; font-size:2.2rem; }
+    /* --- Features / CV --- */
+    .cv-item { background:#fff; border-radius:12px; padding:1.5rem; margin-bottom:1.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.05); }
+    .cv-item h4 { margin-bottom:0.5rem; color:#007acc; }
+    .cv-item p { margin-bottom:0; }
 
-      /* --- Sous-titre animé --- */
-      #header p {
-        margin-top:0.5rem; 
-        color:#555; 
-        font-size:1rem;
-        overflow:hidden;
-        white-space:nowrap;
-        border-right:2px solid #ff6f61;
-        width:0;
-        animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
-        display:inline-block;
-      }
+    /* --- Contact button --- */
+    .button { background:#007acc; color:#fff; padding:0.75rem 1.8rem; border-radius:8px; font-weight:500; display:inline-block; transition: background 0.3s, transform 0.3s; }
+    .button:hover { background:#005f99; transform:translateY(-2px); }
 
-      @keyframes typing {
-        from { width:0; }
-        to { width:22ch; } /* ajuste selon le texte */
-      }
+    /* --- Footer --- */
+    footer { text-align:center; padding:2rem 1rem; font-size:0.9rem; color:#555; border-top:1px solid #eee; }
 
-      @keyframes blink {
-        50% { border-color: transparent; }
-      }
+    /* --- Social icons --- */
+    .icons { display:flex; justify-content:center; gap:1rem; margin-top:1rem; }
+    .icons a { display:inline-flex; justify-content:center; align-items:center; width:38px; height:38px; background:#007acc; color:#fff; border-radius:50%; transition: transform 0.3s, background 0.3s; }
+    .icons a:hover { background:#005f99; transform:translateY(-3px); }
 
-      /* --- Navigation --- */
-      #nav ul {
-        display:flex;
-        justify-content:center;
-        list-style:none;
-        margin-top:2rem;
-        gap:2rem;
-      }
-      #nav a.active { border-bottom:2px solid #ff6f61; padding-bottom:2px; }
+    @media (max-width:600px) { nav ul { flex-direction:column; gap:1rem; } }
+  </style>
+</head>
+<body>
 
-      /* --- Sections --- */
-      section { padding:5rem 1rem; max-width:900px; margin:0 auto; }
-      section h2, section h3 { color:#ff6f61; font-weight:400; margin-bottom:1rem; position:relative; display:inline-block; }
-      section h2::after, section h3::after {
-        content:'';
-        display:block;
-        height:3px;
-        width:0;
-        background:#ff6f61;
-        transition: width 0.5s ease;
-        position:absolute;
-        bottom:-5px;
-        left:0;
-      }
-      section h2:hover::after, section h3:hover::after { width:100%; }
+  <!-- Header -->
+  <header>
+    <img src="images/photo.jpeg" alt="Photo de profil">
+    <h1>Prénom Nom</h1>
+    <p>Étudiante en [ton programme] – Passionnée par [tes intérêts]</p>
+    <nav>
+      <ul>
+        <li><a href="#about" class="active">À propos</a></li>
+        <li><a href="#cv">Mon CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      section p { color:#333; margin-bottom:1.5rem; }
+  <!-- À propos -->
+  <section id="about">
+    <h2>À propos de moi</h2>
+    <p>Je suis étudiante en [programme] à [université], intéressée par [tes domaines]. Je cherche à développer mes compétences en [compétences clés] et à acquérir de l’expérience professionnelle.</p>
+  </section>
 
-      /* --- Images --- */
-      .image img { width:100%; border-radius:12px; margin-bottom:2rem; }
-
-      /* --- Features --- */
-      .feature-icons {
-        display:grid;
-        grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-        gap:1rem;
-        list-style:none;
-        padding:0;
-      }
-      .feature-icons li {
-        background:#fff;
-        border-radius:12px;
-        padding:1rem;
-        text-align:center;
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-      .feature-icons li:hover {
-        transform:translateY(-4px);
-        box-shadow:0 8px 20px rgba(0,0,0,0.05);
-      }
-
-      .features article { display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem; }
-      .features .inner h4 { color:#ff6f61; font-weight:400; }
-
-      /* --- Contact button --- */
-      .button.primary {
-        background:#ff6f61;
-        color:#fff;
-        padding:0.75rem 1.8rem;
-        border-radius:8px;
-        font-weight:500;
-        display:inline-block;
-        transition: background 0.3s, transform 0.3s;
-      }
-      .button.primary:hover { background:#e65b50; transform:translateY(-2px); }
-
-      /* --- Footer --- */
-      #footer {
-        text-align:center;
-        padding:2rem 1rem;
-        font-size:0.9rem;
-        color:#555;
-        border-top:1px solid #eee;
-      }
-
-      /* --- Social icons --- */
-      .icons {
-        display:flex;
-        justify-content:center;
-        gap:1rem;
-        margin-top:1rem;
-      }
-      .icons a {
-        display:inline-flex;
-        justify-content:center;
-        align-items:center;
-        width:38px; height:38px;
-        background:#ff6f61;
-        color:#fff;
-        border-radius:50%;
-        transition: transform 0.3s, background 0.3s;
-      }
-      .icons a:hover { background:#e65b50; transform:translateY(-3px); }
-
-      @media (max-width:600px) {
-        #nav ul { flex-direction:column; gap:1rem; }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <section id="header">
-      <header>
-        <span class="image avatar">
-          <img src="images/photo.jpeg" alt="Avatar" />
-        </span>
-        <h1 id="logo"><a href="#">Flavie Lachance</a></h1>
-        <p>Une courte description de vous</p>
-      </header>
-      <nav id="nav">
-        <ul>
-          <li><a href="#one" class="active">À propos</a></li>
-          <li><a href="#two">Mon travail</a></li>
-          <li><a href="#three">Mon CV</a></li>
-          <li><a href="#four">Contact</a></li>
-        </ul>
-      </nav>
-      <footer>
-        <ul class="icons">
-          <li><a href="#"><span class="label">Twitter</span></a></li>
-          <li><a href="#"><span class="label">Facebook</span></a></li>
-          <li><a href="#"><span class="label">LinkedIn</span></a></li>
-          <li><a href="#"><span class="label">Github</span></a></li>
-        </ul>
-      </footer>
-    </section>
-
-    <div id="wrapper">
-      <div id="main">
-        <!-- One -->
-        <section id="one">
-          <div class="image main"><img src="images/bg.jpeg" alt="Image principale" /></div>
-          <div class="container">
-            <header class="major">
-              <h2>VOTRE NOM</h2>
-              <p>Le sous-titre de votre site.</p>
-            </header>
-            <p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col...</p>
-          </div>
-        </section>
-
-        <!-- Two -->
-        <section id="two">
-          <div class="container">
-            <h3>Mes réalisations</h3>
-            <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae...</p>
-            <ul class="feature-icons">
-              <li>Ici vous pouvez écrire ce que vous voulez</li>
-              <li>Le class= s'occupe des logos à côté de votre texte</li>
-              <li>Trouvez autant de choses à écrire que vous le voulez</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Three -->
-        <section id="three">
-          <div class="container">
-            <h3>Mon CV
+  <!-- CV -->
+  <section id="cv">
+    <h2>Mon CV</h2>
+    <div class="cv-item">
+      <h4>Formation</h4>
+      <p>[Diplôme], [Université], [Année]</p>
+    </div>
+    <div class="cv-item">
+      <h4>Expériences</h4>
+      <p>[Poste / Stage], [Entreprise], [Dates]</p>
+    </d
