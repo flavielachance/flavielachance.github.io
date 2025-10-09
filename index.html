@@ -1,31 +1,198 @@
 <!doctype html>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
   <head>
     <title>Flavie Lachance</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* Reset minimaliste */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+
+      body {
+        background: #f9f9f9;
+        color: #222;
+        line-height: 1.6;
+      }
+
+      a {
+        color: #0077cc;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      a:hover {
+        color: #005fa3;
+      }
+
+      /* Header */
+      #header {
+        text-align: center;
+        padding: 3rem 1rem;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      }
+
+      #header .avatar img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid #0077cc;
+      }
+
+      #header h1 {
+        margin-top: 1rem;
+        font-size: 2rem;
+      }
+
+      #header p {
+        margin-top: 0.5rem;
+        color: #555;
+        font-size: 1rem;
+      }
+
+      /* Navigation */
+      #nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin-top: 1.5rem;
+        gap: 2rem;
+      }
+
+      #nav li {
+        font-weight: 500;
+      }
+
+      #nav a.active {
+        border-bottom: 2px solid #0077cc;
+        padding-bottom: 2px;
+      }
+
+      /* Sections */
+      section {
+        padding: 5rem 1rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      section h2, section h3 {
+        margin-bottom: 1rem;
+        color: #0077cc;
+      }
+
+      section p {
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Images */
+      .image img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Features */
+      .feature-icons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+      }
+
+      .feature-icons li {
+        background: #fff;
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+      }
+
+      .feature-icons li:hover {
+        transform: translateY(-3px);
+      }
+
+      .features article {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .features .inner h4 {
+        color: #0077cc;
+      }
+
+      /* Contact button */
+      .button.primary {
+        background: #0077cc;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-weight: 500;
+        display: inline-block;
+      }
+
+      .button.primary:hover {
+        background: #005fa3;
+      }
+
+      /* Footer */
+      #footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      /* Social icons */
+      .icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .icons a {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        background: #0077cc;
+        color: #fff;
+        border-radius: 50%;
+        transition: background 0.3s;
+      }
+
+      .icons a:hover {
+        background: #005fa3;
+      }
+
+      @media (max-width: 600px) {
+        #nav ul {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
   </head>
-  <body class="is-preload">
+  <body>
     <!-- Header -->
     <section id="header">
       <header>
-        <span class="image avatar"
-          ><img src="images/photo.jpeg" alt=""
-        /></span>
+        <span class="image avatar">
+          <img src="images/photo.jpeg" alt="" />
+        </span>
         <h1 id="logo"><a href="#">Flavie Lachance</a></h1>
-        <p>
-          Une courte description de vous<br />
-          Continuer la courte description
-        </p>
+        <p>Une courte description de vous<br />Continuer la courte description</p>
       </header>
       <nav id="nav">
         <ul>
@@ -37,43 +204,19 @@
       </nav>
       <footer>
         <ul class="icons">
-          <li>
-            <!-- Vous pouvez mettre en hyperlien vos reseaux sociaux en modifiant la valeur de href-->
-            <a href="https://x.com/MLB/" class="icon brands fa-twitter"
-              ><span class="label">Twitter</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon brands fa-facebook-f"
-              ><span class="label">Facebook</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon brands fa-linkedin"
-              ><span class="label">LinkedIn</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon brands fa-github"
-              ><span class="label">Github</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon solid fa-envelope"
-              ><span class="label"><a href="mailto:flavelachance@gmail.com">Me contacter</a></span></a
-            >
-          </li>
+          <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+          <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
         </ul>
       </footer>
     </section>
 
-    <!-- Wrapper -->
     <div id="wrapper">
-      <!-- Main -->
       <div id="main">
         <!-- One -->
         <section id="one">
-          <div class="image main" data-position="center">
+          <div class="image main">
             <img src="images/bg.jpeg" alt="" />
           </div>
           <div class="container">
@@ -81,14 +224,7 @@
               <h2>VOTRE NOM</h2>
               <p>Le sous-titre de votre site.</p>
             </header>
-            <p>
-              Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus
-              col. Commodo id in arcu ante lorem ipsum sed accumsan erat
-              praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo.
-              Vis aliquet tortor ultricies non ante erat nunc integer eu ante
-              ornare amet commetus vestibulum blandit integer in curae ac
-              faucibus integer non. Adipiscing cubilia elementum.
-            </p>
+            <p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo...</p>
           </div>
         </section>
 
@@ -96,24 +232,11 @@
         <section id="two">
           <div class="container">
             <h3>Mes réalisations</h3>
-            <p>
-              Integer eu ante ornare amet commetus vestibulum blandit integer in
-              curae ac faucibus integer non. Adipiscing cubilia elementum
-              integer lorem ipsum dolor sit amet.
-            </p>
+            <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non...</p>
             <ul class="feature-icons">
-              <li class="icon solid fa-code">
-                Ici vous pouvez écrire ce que vous voulez
-              </li>
-              <li class="icon solid fa-cubes">
-                Le class= s'occupe des logos à côté de votre texte
-              </li>
-              <li class="icon solid fa-book">
-                Trouvez autant de choses à écrire que vous le voulez
-              </li>
-              <li class="icon solid fa-coffee">Supprimez le reste</li>
-              <li class="icon solid fa-bolt">Lightning bolt</li>
-              <li class="icon solid fa-users">Shadow clone technique</li>
+              <li class="icon solid fa-code">Ici vous pouvez écrire ce que vous voulez</li>
+              <li class="icon solid fa-cubes">Le class= s'occupe des logos à côté de votre texte</li>
+              <li class="icon solid fa-book">Trouvez autant de choses à écrire que vous le voulez</li>
             </ul>
           </div>
         </section>
@@ -122,22 +245,13 @@
         <section id="three">
           <div class="container">
             <h3>Mon CV</h3>
-            <p>
-              Integer eu ante ornare amet commetus vestibulum blandit integer in
-              curae ac faucibus integer non. Adipiscing cubilia elementum
-              integer. Integer eu ante ornare amet commetus.
-            </p>
+            <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non...</p>
             <div class="features">
               <article>
-                <a href="#" class="image"
-                  ><img src="images/pic01.jpg" alt=""
-                /></a>
+                <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
                 <div class="inner">
                   <h4>Possibly broke spacetime</h4>
-                  <p>
-                    Integer eu ante ornare amet commetus vestibulum blandit
-                    integer in curae ac faucibus integer adipiscing ornare amet.
-                  </p>
+                  <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
                 </div>
               </article>
             </div>
@@ -148,25 +262,10 @@
         <section id="four">
           <div class="container">
             <h3>Me joindre</h3>
-            <p>
-              Integer eu ante ornare amet commetus vestibulum blandit integer in
-              curae ac faucibus integer non.
-            </p>
-            <div class="row gtr-uniform">
-              <div class="col-12">
-                <!-- Vous pouvez mettre votre email ici au lieu de your-email@example.com -->
-                <a
-                  href="mailto:your-email@example.com?subject=Sujet&body=Votre message ici."
-                  class="button primary"
-                >
-                  Envoyer un email
-                </a>
-              </div>
-            </div>
+            <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non.</p>
+            <a href="mailto:your-email@example.com" class="button primary">Envoyer un email</a>
           </div>
         </section>
-        <!-- Five -->
-        <!-- -->
       </div>
 
       <!-- Footer -->
@@ -179,16 +278,5 @@
         </div>
       </section>
     </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
   </body>
 </html>
-
-
