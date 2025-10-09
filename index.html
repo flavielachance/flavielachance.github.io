@@ -36,11 +36,53 @@
     .button:hover { background:#005f99; transform:translateY(-2px); }
 
     /* --- Contact --- */
-    #contact { text-align:center; }
-    #contact p { margin-bottom:2rem; }
-    .icons { display:flex; justify-content:center; gap:1rem; margin-top:1rem; flex-wrap:wrap; }
-    .icons a { display:inline-flex; justify-content:center; align-items:center; width:38px; height:38px; background:#007acc; color:#fff; border-radius:50%; transition: transform 0.3s, background 0.3s; }
-    .icons a:hover { background:#005f99; transform:translateY(-3px); }
+    #contact {
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+#contact h2 {
+  color: #007acc;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+#contact p {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+#contact .button {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+#contact .icons {
+  display: flex;
+  justify-content: flex-start; /* aligne les icônes à gauche */
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+#contact .icon-circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  background: #007acc;
+  color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s, background 0.3s;
+}
+
+#contact .icon-circle:hover {
+  background: #005f99;
+  transform: translateY(-3px);
+}
 
     /* --- Footer --- */
     footer { text-align:center; padding:2rem 1rem; font-size:0.9rem; color:#555; border-top:1px solid #eee; }
@@ -123,6 +165,7 @@
 
 </body>
 </html>
+
 
 
 
