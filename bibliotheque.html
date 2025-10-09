@@ -2,101 +2,83 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Ma bibliothèque</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibliothèque</title>
   <style>
     body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background: url('images/bibliotheque.jpg') center/cover no-repeat fixed;
-      color: #222;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
       margin: 0;
-      padding: 0;
-    }
-
-    .overlay {
-      background-color: rgba(255,255,255,0.9);
-      min-height: 100vh;
-      padding: 3rem 1rem;
+      padding: 20px;
     }
 
     h1 {
       text-align: center;
-      color: #007acc;
-      margin-bottom: 2rem;
+      margin-bottom: 30px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
+    .library {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
 
     .book {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
       text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .book:hover {
-      transform: translateY(-5px);
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 140px;
     }
 
     .book img {
-      width: 100%;
-      height: 220px;
+      width: 120px;
+      height: 180px;
       object-fit: cover;
-    }
-
-    .book h3 {
-      padding: 1rem;
-      font-size: 1rem;
-      color: #007acc;
-    }
-
-    .button {
-      display: inline-block;
-      background: #007acc;
-      color: white;
-      text-decoration: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 8px;
-      margin: 2rem auto;
       display: block;
-      width: fit-content;
-      transition: background 0.3s;
+      margin: 0 auto 10px;
     }
 
-    .button:hover {
-      background: #005f99;
+    .author {
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>Ma bibliothèque</h1>
-    <div class="grid">
-      <a href="livres/livre1.html" class="book">
-        <img src="images/livre1.jpg" alt="Livre 1">
-        <h3>La part de l'autre</h3>
-      </a>
-      <a href="livres/livre2.html" class="book">
-        <img src="images/livre2.jpg" alt="Livre 2">
-        <h3>L'Étranger</h3>
-      </a>
-      <a href="livres/livre3.html" class="book">
-        <img src="livres/livre3.jpg" alt="Livre 3">
-        <h3>Ma vie avec Mozart</h3>
-      </a>
-      <a href="livres/livre1.html" class="book">
-        <img src="livres/livre4.jpg" alt="Livre 4">
-        <h3>L'attentat</h3>
-      </a>
 
-    <a href="index.html" class="button">← Retour au site</a>
+  <h1>Ma Bibliothèque</h1>
+
+  <div class="library">
+    <div class="book">
+      <img src="livres/livre1.jpg" alt="Livre 1">
+      <p class="title">La part de l'autre</p>
+      <p class="author">Éric-Emmanuel Schmitt</p>
+    </div>
+
+    <div class="book">
+      <img src="livres/livre2.jpg" alt="Livre 2">
+      <p class="title">La part de l'autre</p>
+      <p class="author">Éric-Emmanuel Schmitt</p>
+    </div>
+
+    <div class="book">
+      <img src="livres/livre3.jpg" alt="Livre 3">
+      <p class="title">L'étranger</p>
+      <p class="author">Albert Camus</p>
+    </div>
+
+    <div class="book">
+      <img src="livres/livre4.jpg" alt="Livre 4">
+      <p class="title">Ma vie avec Mozart</p>
+      <p class="author">Éric-Emmanuel Schmitt</p>
+    </div>
+
+    <!-- Ajoute autant de livres que tu veux ici -->
   </div>
+
 </body>
 </html>
