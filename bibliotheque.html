@@ -25,12 +25,17 @@
     }
 
     .book {
+      flex: 0 0 calc((100% - 4 * 20px) / 5); /* 5 livres par ligne, gap = 20px */
+      box-sizing: border-box;
       text-align: center;
       background-color: #fff;
       padding: 10px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 270px; /* assure une hauteur uniforme */
     }
 
     .book img {
@@ -38,7 +43,7 @@
       height: 180px;
       object-fit: cover;
       display: block;
-      margin: 0 auto 10px;
+      margin-bottom: 10px;
       cursor: default; /* retire le pointeur clicable */
     }
 
@@ -53,9 +58,29 @@
       font-size: 12px;
       color: #555;
     }
+
+    /* Responsive : moins de livres par ligne sur petit écran */
+    @media (max-width: 900px) {
+      .book {
+        flex: 0 0 calc((100% - 3 * 20px) / 4); /* 4 livres par ligne */
+      }
+    }
+
+    @media (max-width: 700px) {
+      .book {
+        flex: 0 0 calc((100% - 2 * 20px) / 3); /* 3 livres par ligne */
+      }
+    }
+
+    @media (max-width: 500px) {
+      .book {
+        flex: 0 0 calc(100%); /* 1 livre par ligne */
+      }
+    }
   </style>
 </head>
 <body>
+
 
   <h1>Ma Bibliothèque</h1>
 
@@ -156,7 +181,7 @@
       <p class="author">Coco Mellors/</p>
     </div>
 
-   <div class="book">
+     <div class="book">
       <img src="livres/livre17.jpg" alt="Livre 17">
       <p class="title">Normal People</p>
       <p class="author">Sally Rooney/</p>
