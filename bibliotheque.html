@@ -39,12 +39,19 @@
       object-fit: cover;
       display: block;
       margin: 0 auto 10px;
+      cursor: default; /* retire le pointeur clicable */
+    }
+
+    .title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 5px;
     }
 
     .author {
-      font-size: 14px;
-      font-weight: bold;
-      color: #333;
+      font-size: 12px;
+      color: #555;
     }
   </style>
 </head>
@@ -61,20 +68,20 @@
 
     <div class="book">
       <img src="livres/livre2.jpg" alt="Livre 2">
-      <p class="title">La part de l'autre</p>
-      <p class="author">Éric-Emmanuel Schmitt</p>
-    </div>
-
-    <div class="book">
-      <img src="livres/livre3.jpg" alt="Livre 3">
-      <p class="title">L'étranger</p>
+      <p class="title">L'Étranger 2</p>
       <p class="author">Albert Camus</p>
     </div>
 
     <div class="book">
-      <img src="livres/livre4.jpg" alt="Livre 4">
+      <img src="livres/livre3.jpg" alt="Livre 3">
       <p class="title">Ma vie avec Mozart</p>
       <p class="author">Éric-Emmanuel Schmitt</p>
+    </div>
+
+    <div class="book">
+      <img src="livres/livre4.jpg" alt="Livre 4">
+      <p class="title">L'attentat</p>
+      <p class="author">Yasmina Khadra</p>
     </div>
 
     <!-- Ajoute autant de livres que tu veux ici -->
