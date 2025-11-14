@@ -158,19 +158,22 @@
   border: 1px solid #ddd;
 }
 
-/* --- Ajuster l'espace titre / texte --- */
+/* Ajuster l'espace titre / texte de la section CV */
 #cv h2 {
-  margin-bottom: 0.5rem;  /* rapproche le titre du texte */
+  margin: 0;           /* supprime toutes les marges */
+  padding: 0;          /* supprime tout padding éventuel */
   color: #007acc;
   font-weight: 400;
+  line-height: 1.2;    /* resserre le texte */
 }
 
-#cv p {
-  margin-top: 0;          /* supprime l'espace au-dessus du texte */
-  margin-bottom: 1rem;    /* espace entre paragraphes */
+#cv p:first-of-type {
+  margin-top: 0.3rem;  /* petit espace minimal après le titre */
+  margin-bottom: 1rem;
   color: #333;
+  line-height: 1.4;
 }
-</style>
+
 
 
 
@@ -213,6 +216,7 @@
 
 </body>
 </html>
+
 
 
 
