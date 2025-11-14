@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon CV - Étudiante</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     /* --- Reset minimaliste --- */
     * { margin:0; padding:0; box-sizing:border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
@@ -12,12 +13,11 @@
     a:hover { color:#005f99; }
 
     /* --- Header --- */
-    header { text-align:center; padding:2rem 1rem 2rem 1rem; background:#fff; border-bottom:1px solid #eee; }
+    header { text-align:center; padding:2rem 1rem; background:#fff; border-bottom:1px solid #eee; }
     header img { width:130px; height:130px; object-fit:cover; border-radius:50%; border:2px solid #007acc; }
     header h1 { margin-top:1rem; font-weight:400; font-size:2rem; }
     header p { margin-top:0.5rem; color:#555; font-size:1rem; }
 
-    /* --- Navigation --- */
     nav ul { display:flex; justify-content:center; list-style:none; margin-top:2rem; gap:2rem; flex-wrap:wrap; }
     nav a.active { border-bottom:2px solid #007acc; padding-bottom:2px; }
 
@@ -26,63 +26,45 @@
     section h2, section h3 { color:#007acc; font-weight:400; margin-bottom:1rem; }
     section p { color:#333; margin-bottom:1.5rem; }
 
-    /* --- Features / CV --- */
-    .cv-item { background:#fff; border-radius:12px; padding:1.5rem; margin-bottom:1.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.05); }
-    .cv-item h4 { margin-bottom:0.5rem; color:#007acc; }
-    .cv-item p { margin-bottom:0; }
-
-    /* --- Button --- */
+    /* --- Boutons --- */
     .button { background:#007acc; color:#fff; padding:0.75rem 1.8rem; border-radius:8px; font-weight:500; display:inline-block; transition: background 0.3s, transform 0.3s; }
     .button:hover { background:#005f99; transform:translateY(-2px); }
 
-    /* --- Contact --- */
-    #contact {
-  text-align: left;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 1rem;
-}
+    /* --- Section CV --- */
+    .cv-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
 
-#contact h2 {
-  color: #007acc;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
+    .cv-info { flex: none; }
 
-#contact p {
-  margin-bottom: 1.5rem;
-  color: #333;
-}
+    .cv-preview img {
+      max-width: 150px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+    }
 
-#contact .button {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-}
+    #cv h2 { margin: 0; padding: 0; line-height:1.2; }
+    #cv p:first-of-type { margin-top:0.3rem; margin-bottom:1rem; line-height:1.4; }
 
-#contact .icons {
-  display: flex;
-  justify-content: flex-start; /* aligne les icônes à gauche */
-  gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-#contact .icon-circle {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 38px;
-  height: 38px;
-  background: #007acc;
-  color: #fff;
-  border-radius: 50%;
-  transition: transform 0.3s, background 0.3s;
-}
-
-#contact .icon-circle:hover {
-  background: #005f99;
-  transform: translateY(-3px);
-}
+    /* --- Section Contact --- */
+    #contact { text-align:left; max-width:900px; margin:0 auto; padding:3rem 1rem; }
+    #contact h2 { color:#007acc; font-weight:400; margin-bottom:1rem; }
+    #contact p { margin-bottom:1.5rem; color:#333; }
+    #contact .button { display:inline-block; margin-bottom:1.5rem; }
+    #contact .icons { display:flex; justify-content:flex-start; gap:1rem; margin-top:1rem; flex-wrap:wrap; }
+    #contact .icon-circle {
+      display:inline-flex; justify-content:center; align-items:center;
+      width:38px; height:38px;
+      background:#007acc; color:#fff; border-radius:50%;
+      transition: transform 0.3s, background 0.3s;
+    }
+    #contact .icon-circle:hover { background:#005f99; transform:translateY(-3px); }
 
     /* --- Footer --- */
     footer { text-align:center; padding:2rem 1rem; font-size:0.9rem; color:#555; border-top:1px solid #eee; }
@@ -109,96 +91,48 @@
 
   <!-- À propos -->
   <section id="about">
-  <h2>À propos de moi</h2>
-  <p>Je suis étudiante à la maîtrise avec mémoire en science politique à l'Université Laval. J'ai également complété un baccalauréat en science politique. Je travaille actuellement chez Élections Québec au service de la recherche.</p>
+    <h2>À propos de moi</h2>
+    <p>Je suis étudiante à la maîtrise avec mémoire en science politique à l'Université Laval. J'ai également complété un baccalauréat en science politique. Je travaille actuellement chez Élections Québec au service de la recherche.</p>
+    <p>Mes principaux intérêts de recherche portent sur la politique québécoise et canadienne, le comportement électoral ainsi que la participation politique.</p>
+    <p>En dehors du travail, j’aime beaucoup <a href="bibliotheque.html">lire</a>, faire de la randonnée et cuisiner.</p>
+  </section>
 
-  <p>Mes principaux intérêts de recherche portent sur la politique québécoise et canadienne, le comportement électoral ainsi que la participation politique.</p>
-
-  <p>En dehors du travail, j’aime beaucoup <a href="bibliotheque.html">lire</a>, faire de la randonnée et cuisiner.
-</section>
-
-
-<!-- CV -->
-<section id="cv">
-  <h2>Mon curriculum vitae</h2>
-  
-  <div class="cv-container">
-    <div class="cv-info">
-      <p>Vous pouvez consulter mon CV complet ici :</p>
-      <a href="assets/cv_flavie_lachance.pdf" class="button" download>Télécharger mon CV</a>
+  <!-- CV -->
+  <section id="cv">
+    <h2>Mon curriculum vitae</h2>
+    <div class="cv-container">
+      <div class="cv-info">
+        <p>Vous pouvez consulter mon CV complet ici :</p>
+        <a href="assets/cv_flavie_lachance.pdf" class="button" download>Télécharger mon CV</a>
+      </div>
+      <div class="cv-preview">
+        <img src="images/image_cv.png" alt="Aperçu de mon CV">
+      </div>
     </div>
+  </section>
 
-    <div class="cv-preview">
-      <img src="images/image_cv.png" alt="Aperçu de mon CV">
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Pour toute question ou collaboration, n'hésitez pas à me contacter :</p>
+    <a href="mailto:flavelachance@gmail.com" class="button">Envoyer un email</a>
+
+    <div class="icons">
+        </a>
+  <a href="https://www.linkedin.com/in/flavie-lachance-383575304" title="LinkedIn" class="icon-circle" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+      <a href="https://github.com/flavielachance" title="GitHub" class="icon-circle">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://fable.co/flavie-lachance-473351849525?referralID=OigmZA3Nz8" title="Fable" class="icon-circle">
+        <i class="fas fa-book"></i>
+      </a>
+      <a href="https://www.instagram.com/lachanceflavie/" title="Instagram" class="icon-circle">
+        <i class="fab fa-instagram"></i>
+      </a>
     </div>
-  </div>
-</section>
-
-<style>
-/* --- Conteneur CV --- */
-.cv-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;         /* réduit l'espace entre texte et image */
-  margin-top: 1.5rem;
-  flex-wrap: wrap;    /* pour mobile */
-}
-
-/* --- Texte et bouton --- */
-.cv-info {
-  flex: none;         /* empêche le texte de prendre tout l'espace */
-}
-
-/* --- Image d'aperçu du CV --- */
-.cv-preview img {
-  max-width: 150px;  
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border: 1px solid #ddd;
-}
-
-/* Ajuster l'espace titre / texte de la section CV */
-#cv h2 {
-  margin: 0;           /* supprime toutes les marges */
-  padding: 0;          /* supprime tout padding éventuel */
-  color: #007acc;
-  font-weight: 400;
-  line-height: 1.2;    /* resserre le texte */
-}
-
-#cv p:first-of-type {
-  margin-top: 0.3rem;  /* petit espace minimal après le titre */
-  margin-bottom: 1rem;
-  color: #333;
-  line-height: 1.4;
-}
-    </div>
-  </div>
-</section>
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Pour toute question ou collaboration, n'hésitez pas à me contacter :</p>
-  <a href="mailto:flavelachance@gmail.com" class="button">Envoyer un email</a>
-  
-  <div class="icons">
-    <a href="https://github.com/flavielachance" title="GitHub" class="icon-circle">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="https://fable.co/flavie-lachance-473351849525?referralID=OigmZA3Nz8" title="Fable" class="icon-circle">
-      <i class="fas fa-book"></i>
-    </a>
-    <a href="https://www.instagram.com/lachanceflavie/" title="Instagram" class="icon-circle">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </div>
-</section>
-
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -215,24 +149,5 @@
       });
     });
   </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
