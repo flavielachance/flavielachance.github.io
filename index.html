@@ -118,44 +118,41 @@
 </section>
 
   
- <!-- CV -->
-<section id="cv">
-  <h2>Mon curriculum vitae</h2>
-  
-  <div class="cv-container">
-    <div class="cv-info">
-      <p>Vous pouvez consulter mon CV complet ici :</p>
-      <a href="assets/cv_flavie_lachance.pdf" class="button" download>Télécharger mon CV</a>
-    </div>
-
-    <div class="cv-preview">
-      <img src="images/image_cv.png" alt="Aperçu de mon CV">
-    </div>
-  </div>
-</section>
-
 <style>
-/* Conteneur CV */
+/* --- Conteneur CV --- */
 .cv-container {
   display: flex;
   align-items: center;
   gap: 1rem;         /* réduit l'espace entre texte et image */
   margin-top: 1.5rem;
-  flex-wrap: wrap;    /* pour que ça reste responsive sur mobile */
+  flex-wrap: wrap;    /* pour mobile */
 }
 
-/* Texte et bouton */
+/* --- Texte et bouton --- */
 .cv-info {
   flex: none;         /* empêche le texte de prendre tout l'espace */
 }
 
-/* Image d'aperçu du CV */
+/* --- Image d'aperçu du CV --- */
 .cv-preview img {
   max-width: 150px;  
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   border: 1px solid #ddd;
+}
+
+/* --- Ajuster l'espace titre / texte --- */
+#cv h2 {
+  margin-bottom: 0.5rem;  /* rapproche le titre du texte */
+  color: #007acc;
+  font-weight: 400;
+}
+
+#cv p {
+  margin-top: 0;          /* supprime l'espace au-dessus du texte */
+  margin-bottom: 1rem;    /* espace entre paragraphes */
+  color: #333;
 }
 </style>
 
@@ -200,6 +197,7 @@
 
 </body>
 </html>
+
 
 
 
