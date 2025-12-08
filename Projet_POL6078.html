@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+---
+title: "Le don et l'argent du don : analyse des habitudes de contributions au Québec"
+author: "Flavie Lachance | Université Laval"
+cours: "POL-6078: Outils numériques de recherche en sciences sociales"
+date: "`r format(Sys.Date(), ' %B %Y')`"
+output:
+  html_document:
+    theme: flatly         
+    toc: true
+    toc_depth: 2
+    toc_float: 
+      collapsed: false    
+      smooth_scroll: true
+    number_sections: false 
+  pdf_document:
+    toc: true
+    number_sections: false 
+    highlight: zenburn    
+    keep_md: true        
+geometry: margin=1in
+
+header-includes:
+  - \usepackage{setspace}
+  - \setstretch{0.5}
+---
+
+# Question de recherche
+
+Dans quelle mesure les donateurs des partis politiques au Québec contribuent-ils de façon récurrente d'une année à l'autre et comment la récurrence des dons varie-telle d'un parti à l'autre ?
+
+# Revue de la littérature et hypothèses
+
+L'argent, souvent considéré comme le « nerf de la guerre », joue un rôle crucial dans les activités des partis politiques (Pelletier et Pétry, 2012; Brock et Jansen, 2015). Elle est nécessaire pour mener leurs campagnes électorales, d'assurer la visibilité du parti à travers divers moyens de communication, et de couvrir les dépenses quotidiennes telles que les salaires des employés, les frais de location de locaux ou encore les coûts administratifs (Brock et Jansen, 2015 ; Tolley et al., 2022; Montigny et Villeneuve-Siconnelly, 2018). Elles donnent également une forme de légitimité, en démontrant qu'un candidat bénéficie d'un appui. Ce signal peut exercer une influence sur la perception qu'ont les électeurs de la crédibilité et du potentiel de succès d'un candidat ou d'un parti (Tolley et al., 2022). Les contributions politiques représentent donc une forme essentielle de participation politique. Pour cette raison, les partis cherchent à maintenir et à renforcer des relations à long terme avec leurs donateurs en mobilisant différentes stratégies de financement politique (Baker, 2016). Chaque parti dispose généralement d'un bassin de donateurs réguliers, dont les liens avec le parti sont plus solide que ceux des nouveaux donateurs (Baker, 2016). Les donateurs réguliers sont par ailleurs plus susceptibles de devenir militants ou bénévoles lors des campagnes électorales (Francia et al., 2003).
+
+Cependant, au Canada, l'identification partisane se caractérise par une grande flexibilité. La majorité des citoyens sont des partisans « flexibles », c'est-à-dire qu'ils s'identifient faiblement à un parti et ont davantage tendance à changer d'affiliation au fil du temps, contrairement aux partisans « durables », fortement attachés à un parti (Gidengil, 2022). Cette tendance s'inscrit dans un contexte international marqué par un déclin du militantisme. Les citoyens s'engagement de moins en moins dans les formes traditionnelles de participation politiques, telles que l'adhésion à un parti, le militantisme actif ou encore les contributions politiques (Whiteley, 2011 ; Marien et al., 2010 ; Skocpol 2013). On observe donc une baisse du nombre de donateurs individuels en Europe (Koß, 2024) Cette tendance semble s'être observée également au Québec, où le nombre de donateurs est passé de près de 70 000 donateurs en 2008 à moins de 50 000 en 2022 (Directeur général des élections, 2014 ; Élections Québec, 2025).
+
+Dans ce contexte du déclin du militantisme et de flexibilité de l'identification partisane, il est possible de formuler l'hypothèse suivante :
+
+*\
+Hypothèse : La majorité des donateurs québécois contribuent de manière ponctuelle, c'est-à-dire qu'ils effectuent leurs dons au cours d'une seule année, sans récurrence d'une année à l'autre.*
+
+Pour faire cette revue de la littérature, j'ai utilisé différents outils de recherche documentaire et bases de données tels que Google Scholar et Sofia, à partir desquels j'ai trouvé différents articles scientifiques à partir de mots clés et de concepts. Je me suis inspirée de la méthode du snowballing, (forward et backward) pour identifier les principaux auteurs et travaux sur le sujet. À partir de Google Scholar, j'ai notamment été en mesure d'explorer facilement les articles ayant cité des articles pertinents.
+
+Un autre outil qui m'a aidé dans la rédaction de la revue de la littérature est Elicit, qui m'a permis d'extraire automatiquement des articles scientifiques pertinents pour mon sujet. J'ai également utilisé Zotero comme outil de référence bibliographique. Ce logiciel m'a permis de faire un tri dans mes articles pour cibler les plus pertinents, mais également de créer des catégories, de gérer les doublons et de créer automatiquement des références bibliographiques.
+
+# Méthodologie
+
+## Collecte de données
+
+Pour effectuer la collecte de données, j'ai utilisé la base de données des contributions politiques versés aux entités politiques québécoises, accessible sur le site internet d'Élections Québec. Les données étaient libres d'accès et sous forme de fichier cvs., facilitant ainsi la collecte. J'ai pu directement télécharger le ficher et l'importer dans Rstudio. Ainsi, je n'ai eu besoin d'effectuer d'extraction de données en ligne ou d'utiliser des outils tels que Factiva. Ensuite, à l'aide de Rstudio, j'ai nettoyé les données afin des les visualiser sous forme de tableau, pour que chaque donnée soient divisées en lignes et colonnes. Chaque ligne étant une information (comme le nom et le prénom du donateur, le montant du don, le partis politique, etc.) et chaque ligne étant un donateur. J'ai aussi uniformisé la formulation de certaines données, notamment en retirant les espaces superflus dans les codes postaux J'ai utilisé le logiciel Rstudio pour nettoyer mes données, puisqu'il me permet d'utiliser le langage de programmation R, largement utilisé en science social. Ce langage de programmation me permet aussi de faire de l'analyse et de la visualisation de données, me permettant ainsi de pouvoir centraliser le traitement des données dans un seul et même logiciel, en mobilisant différents packages.
+
+## Analyse et visualisation des données
+
+Après avoir collecté et nettoyé les données, j\'ai passé à l\'analyse et la visualisation. J\'ai créé un identifiant unique pour chaquedonateur à partir de leur nom, prénom et code postal. Pour faire ces analyses, j'ai utilisé le package dyplr, un packge R, qui fait parti de Tidyverse et qui permet notamment faire de la manipulation de données. Cette étape était essentielle pour regrouper correctement les contributions d\'une même personne sur plusieurs années.
+
+J\'ai ensuite analysé la dispersion des donateurs en fonction du nombre d\'années pour lesquelles ils ont données. Les résultats de cette analyse ont été visualisées sous forme de graphique (graphique 1) à l\'aide de ggplot2. Finalement, j\'ai analysé la proportion des donateurs de chaque parti politique en fonction du nombre d\'années de contribution. Ces résultats ont également été visualisé sous forme de graphique à bande empilées (graphique2) à l\'aide de ggplot2. Ggplot 2 est un package R permettant de produire des
+graphiques et de les personnaliser.
+
+# Résultats
+
+### Graphique 1:
+
+![](graph1.png)
+
+Les proportions montrent que la majorité des donateurs québécois sont ponctuels, c'est-à-dire qu'ils contribuent à un parti politique une seule année (58,7 %), ce qui confirme l'hypothèse de recherche. Cela indique que plus de la moitié des contributeurs ne s'engagent pas de manière répétée, ce qui suggère une fidélité partisane relativement faible pour la majorité des donateurs.
+
+En comparaison, 18 % des donateurs ont contribué sur deux années, et 14,6 % sur trois à quatre années, ce qui montre qu'un nombre plus restreint de donateurs maintient un engagement sur plusieurs cycles électoraux. Enfin, seulement 8,7 % des donateurs ont versé des contributions sur cinq années ou plus, représentant un noyau dur de contributeurs fidèles.
+
+Face à ces résultats, on peut maintenant se demander si la fidélité des donateus diverge entre les principaux partis politiques au Québec.
+
+### Graphique 2:
+
+![](graph2.png)
+
+Les résultats montrent que la majorité des dons provient de donateurs ponctuels (une seule année), mais la proportion varie selon les partis. Les « autres entités politiques » et le Parti conservateur du Québec (PCQ) présentent les profils les plus volatils, avec environ 72 % de donateurs ponctuels et moins de 10 % sur trois ans ou plus, reflétant des bases peu institutionnalisées.
+
+À l'inverse, le Parti libéral du Québec (PLQ) et la Coalition avenir Québec (CAQ) disposent d'une fidélisation plus solide : 55 à 60 % de donateurs ponctuels, et près d'un quart contribuant sur trois ans ou plus, signe d'un soutien stable. Québec solidaire (QS) montre également une fidélité notable, avec plus de 26 % de donateurs actifs sur trois ans et plus.
+
+Le Parti québécois (PQ) se distingue par la fidélité la plus élevée : moins de 46 % de donateurs ponctuels et plus de 35 % sur trois ans ou plus, illustrant une base militante engagée et stable malgré les fluctuations électorales.
+
+# Conclusion
+
+Cette recherche visait à comprendre dans quelle mesure les donateurs québécois contribuent de façon récurrente aux partis politiques et comment cette fidélité varie d\'un parti à l\'autre. Les résultats confirment l\'hypothèse de départ : la grande majorité des donateurs effectuent un don une seule année, sans récurrence. Ces résultats s'inscrivent dans un contexte plus large de faible identification partisane et de déclin du militantisme observé au Québec comme ailleurs dans le monde.
+
+L\'analyse montre toutefois que cette dynamique n\'est pas uniforme. Certains partis, notamment le Parti québécois bénédicient d\'un noyau plus important de donateurs fidèles, contribuant sur plusieurs années. À l\'inverse, d'autres partis, comme le Parti conservateur du Québec et le Parti libéral du Québec dépendent beaucoup plus de contributions irrégulières, ce qui traduit des bases militantes plus volatiles et moins institutionnalisées.
+
+On peut donc conclure que le financement des partis repose en grande partie sur des apports ponctuels, avec une petite proportion de donateurs réguliers et très fidèles qui assurent une certaine stabilité financière sur le long terme. Cela peut avoir des implications importantes pour la planification stratégique du financement et de mobilisation des donateurs : les partis doivent à la fois attirer de nouveaux donateurs chaque année et entretenir la fidélité de leur base existante.
+
+# Discussion
+
+Les outils mobilisés dans le cadre de ce travail ont été sélectionnés principalement en fonction des valeurs et philosophies du logiciel libre. Les logiciels libres comme Rstudio, que j'ai utilisé dans tout le processus de ce travail pour coder avec le langage de programmation R, que ce soit lors de la collecte, l'analyse et la visualisation graphique, mais également au moment de l'écriture avec le langage de balisage Markdown. Ce lociel est libre, reposant sur des principes de transparence, de collaboration et de reproductibilité scientifique. De plus, j'ai choisi ce logiciel pour son accessibilité, puisqu'il est disponible gratuitement. Finalement, Rstudio est très adaptable et flexible, permettant notamment de personnaliser la visualisation des graphiques.
+
+En plus des valeurs portées par ces logiciels, je me suis également basée sur mes besoins pour faire mon choix d'outils. Notamment, Google Scholar et Elicit ne sont pas des logiciels libres, mais ils sont facilement accessibles (notamment avec les accès Elicit de l'Université Laval et le jumelage de Google Scholar et la bibliothèque de l'Université Laval).
+
+# Références
+
+-   Baker, A. E. (2018). Individual party donors : True allies or free agents? *Party Politics*, *24*(5), 577‑587.
+
+-   Brock, D. M., & Jansen, H. J. (2015). Raising, Spending, and Regulating Party Finances in the Provinces. *Canadian Political Science Review*, *9*(1), 55‑74.
+
+-   Directeur général des élections du Québec. (2014). Rapport sur la mise en œuvre de la réforme des lois électorales. *Élections Québec.*
+
+-   Élections Québec. (2025). *Bilan du financement politique provincial 2013-2023*.
+
+-   Francia, P. L., Green, J. C., Herrnson, P. S., Powell, L. W., & Wilcox, C. (2005). Limousine liberals and corporate conservatives: The financial constituencies of the democratic and republican parties. *Social Science Quarterly*, *86*(4), 761-778.
+
+-   Gidengil, E. (2022). Voting behaviour in canada: the state of the discipline. *Canadian Journal of Political Science/Revue canadienne de science politique*, *55*(4), 916-938.
+
+-   Koß, M. (2025). When (and how) ideas become arguments : The regulation of party donations in Germany. *Italian Political Science Review/Rivista Italiana Di Scienza Politica*, *55*(1), 25‑38.
+
+-   Marien, S., Hooghe, M., & Quintelier, E. (2010). Inequalities in Non-Institutionalised forms of Political Participation : A Multi-Level Analysis of 25 Countries. *Political Studies*, *58*(1), 187‑213.
+
+-   Montigny, E., & Villeneuve-Siconnelly, K. (s. d.). *Le financement des partis politiques Une revue de la littérature*.
+
+-   Pelletier, R., & Pétry, F. (2012). Les partis politiques québécois dans la tourmente: mieux comprendre et évaluer leur rôle. Presses de l\'Université Laval.
+
+-   Skocpol, T. (2013). *Diminished Democracy : From Membership to Management in American Civic Life*. University of Oklahoma Press.
+
+-   Tolley, E., Besco, R., & Sevi, S. (2022). Who Controls the Purse Strings? A Longitudinal Study of Gender and Donations in Canadian Politics. *Politics & Gender*, *18*(1), 244‑272.
+
+-   Whiteley, P. F. (2011). Is the party over? The decline of party activism and membership across the democratic world. *Party Politics*, *17*(1), 21‑44.
+
+				
+			
+		
+
+	
